@@ -34,6 +34,7 @@ main{
     padding: 100px 10% 10px;
     background-color:slateblue;
     min-height: 100vh;
+
     ul{
         margin-top: 20px;
         padding: 10px 40px 10px;
@@ -73,6 +74,13 @@ main{
                     font-size: 15px;
                 }
             }
+        }
+    }
+
+    .pilots{
+        li{
+            padding-bottom: 4px;
+            border-bottom: 2px solid black!important;
         }
     }
 }

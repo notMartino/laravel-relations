@@ -23,6 +23,16 @@
                             <option value="{{$brand -> id}}">{{$brand -> name}}</option>
                         @endforeach
                     </select>
+                    <ul class="pilots">
+                        @foreach ($pilots as $pilot)
+                            <li>
+                                <label for="pilot_id[]">{{$pilot -> firstname . ' ' .$pilot -> lastname}}</label>
+                                <input type="checkbox" name="pilot_id[]" value="{{$pilot -> id}}">
+                            </li>
+                        @endforeach
+                    </ul>
+
+
                     <button type="submit">Create</button>
                 </form>
             </li>

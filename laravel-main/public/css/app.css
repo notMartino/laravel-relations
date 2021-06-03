@@ -90,3 +90,8 @@ main ul a i.fa-external-link-alt {
   font-size: 15px;
 }
 
+main .pilots li {
+  padding-bottom: 4px;
+  border-bottom: 2px solid black !important;
+}
+

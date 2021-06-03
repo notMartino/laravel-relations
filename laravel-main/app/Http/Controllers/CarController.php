@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Car;
 use App\Brand;
+use App\Pilot;
 
 class CarController extends Controller
 {
@@ -21,12 +22,12 @@ class CarController extends Controller
 
     public function createCarView(){
         $brands = Brand::all();
-
-        return view('pages.createCar', compact('brands'));
+        $pilots = Pilot::all();
+        return view('pages.createCar', compact('brands', 'pilots'));
     }
 
     public function storeCar(Request $request){
-
+        // dd($request -> all());
         $validated = $request -> validate([
             'name' => 'required|string|max:64|min:2',
             'model' => 'required|string|max:64|min:2',
@@ -38,6 +39,9 @@ class CarController extends Controller
         $car-> brand() -> associate($brand);
         $car -> save();
 
+        $car -> pilots() -> attach($request -> get ('pilot_id'));
+        $car -> save();
+        
         return redirect() -> route('carDetailsLink', $car -> id);
     }
 }
