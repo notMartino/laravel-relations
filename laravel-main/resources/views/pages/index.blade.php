@@ -17,8 +17,8 @@
                         {{'KW: ' . $car -> kw}} <br>
                         <h4>Pilots</h4>
                         @foreach ($car -> pilots as $pilot)
-                            <a href="">
-                               {{$pilot -> firstname . ' ' .$pilot -> lastname}} 
+                            <a href="{{route('pilotDetailsLink', $pilot -> id)}}">
+                               {{$pilot -> firstname . ' ' .$pilot -> lastname}} <i class="fas fa-external-link-alt"></i>
                             </a> 
                             <br>
                         @endforeach

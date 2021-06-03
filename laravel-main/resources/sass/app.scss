@@ -69,6 +69,9 @@ main{
             color: black;
             i{
                 font-size: 25px;
+                &.fa-external-link-alt{
+                    font-size: 15px;
+                }
             }
         }
     }

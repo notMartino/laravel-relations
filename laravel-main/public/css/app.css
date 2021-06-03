@@ -86,3 +86,7 @@ main ul a i {
   font-size: 25px;
 }
 
+main ul a i.fa-external-link-alt {
+  font-size: 15px;
+}
+
